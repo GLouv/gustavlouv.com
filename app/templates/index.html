@@ -1,117 +1,196 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Hero Section with subtle gradient + mesh -->
-<section class="hero-gradient mesh-pattern relative overflow-hidden">
-    <div class="max-w-[70ch] mx-auto px-8 pt-32 pb-16">
-        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 heading-gradient">
-            From sales floors to AI agents.<br>
+<!-- Hero Section with Premium Background -->
+<section class="relative overflow-hidden gradient-bg mesh-gradient">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 sm:pt-32 pb-12 sm:pb-16 fade-in-section">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6 sm:mb-8 gradient-text max-w-5xl" style="letter-spacing: -0.02em;">
+            From sales floors to AI agents.<br class="hidden sm:block">
             Automating how the Nordics sell.
         </h1>
     
-        <p class="text-lg leading-relaxed text-graphite-700 mb-4">
+    <div class="max-w-3xl">
+        <p class="text-base sm:text-lg lg:text-xl leading-relaxed text-graphite-700 mb-4">
             I built Agent360 to create the Nordic AI sales infrastructure—voice agents that understand context, 
             navigate complexity, and close deals. Six months in, we're turning sales conversations into scalable systems.
         </p>
         
-        <p class="text-lg leading-relaxed text-graphite-700 mb-8">
+        <p class="text-base sm:text-lg lg:text-xl leading-relaxed text-graphite-700 mb-8 sm:mb-10">
             Before this, I closed 8,000+ contracts before turning 25, survived an EcommerceBot hostage incident in SF, 
             and pivoted toward the AI future. This is where that journey leads.
         </p>
-        
-        <!-- CTAs -->
-        <div class="flex gap-4 items-center flex-wrap">
+    </div>
+    
+        <!-- CTAs with Premium Effects -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
             <a href="/blog" 
-               class="inline-flex items-center justify-center px-6 py-3 bg-electric-blue text-white rounded-xl font-medium shadow-sm hover:shadow-md min-w-[44px] min-h-[44px]">
-                Read the Blog
+               class="btn-glow inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-electric-blue text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-electric-blue/20 transform hover:scale-105 min-w-[44px] min-h-[44px] group text-center">
+                <span>Read the Blog</span>
+                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
             </a>
             <a href="https://x.com/gustavlouv" 
                target="_blank" 
                rel="noopener"
-               class="inline-flex items-center justify-center px-6 py-3 border-2 border-graphite-200 text-graphite-900 rounded-xl font-medium hover:border-electric-blue hover:text-electric-blue min-w-[44px] min-h-[44px]">
+               class="glass-card inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-graphite-900 rounded-xl font-semibold hover:border-electric-blue/30 transform hover:scale-105 min-w-[44px] min-h-[44px] text-center">
                 Follow on X
             </a>
         </div>
     </div>
 </section>
 
-<!-- Agent360 Snapshot with fade-in -->
-<section class="max-w-[70ch] mx-auto px-8 py-16 border-t border-graphite-200 fade-in">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-graphite-900">Agent360 Now</h2>
-    <p class="text-base md:text-lg leading-relaxed text-graphite-700">
-        Building AI voice agents that sell with context. We're focused on the Nordic market first—training models 
-        that understand local nuance, regulatory requirements, and buyer behavior. The infrastructure layer for 
-        the next decade of sales.
-    </p>
-</section>
-
-<!-- Thought of the Week with fade-in -->
-<section class="max-w-[70ch] mx-auto px-8 py-16 fade-in">
-    <div class="bg-graphite-50 border border-graphite-100 rounded-xl p-8 card-hover">
-        <p class="text-sm uppercase tracking-wide text-graphite-500 mb-3 font-medium">Thought of the Week</p>
-        <p class="text-lg leading-relaxed text-graphite-900 italic">
-            Context isn't just data—it's the difference between an agent that responds and one that understands. 
-            The best AI sales tools won't replace reps; they'll make exceptional performance repeatable.
+<!-- Agent360 Snapshot -->
+<section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 border-t border-graphite-200 fade-in-section">
+    <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-blue/10 text-electric-blue rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-blue opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-electric-blue"></span>
+            </span>
+            Active Development
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-graphite-900">Agent360 Now</h2>
+        <p class="text-base sm:text-lg lg:text-xl leading-relaxed text-graphite-700">
+            Building AI voice agents that sell with context. We're focused on the Nordic market first—training models 
+            that understand local nuance, regulatory requirements, and buyer behavior. The infrastructure layer for 
+            the next decade of sales.
         </p>
     </div>
 </section>
 
-<!-- Latest Blog Posts with fade-in -->
-<section class="max-w-6xl mx-auto px-8 py-16 fade-in">
-    <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold text-graphite-900">Latest Posts</h2>
-        <a href="/blog" class="text-electric-blue hover:opacity-80 font-medium link-hover">View all →</a>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Blog post cards -->
-        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
-            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
-            <h3 class="text-xl font-semibold mb-2 text-graphite-900">Context as Key Differentiator</h3>
-            <p class="text-graphite-600 text-sm leading-relaxed">Why the best AI agents win on context, not just speed.</p>
-        </div>
-        
-        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
-            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
-            <h3 class="text-xl font-semibold mb-2 text-graphite-900">AI Agents with Tools</h3>
-            <p class="text-graphite-600 text-sm leading-relaxed">How tool-equipped agents transform sales workflows.</p>
-        </div>
-        
-        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
-            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
-            <h3 class="text-xl font-semibold mb-2 text-graphite-900">EU AI Act Perspective</h3>
-            <p class="text-graphite-600 text-sm leading-relaxed">Building compliant AI in the Nordic regulatory landscape.</p>
+<!-- Thought of the Week -->
+<section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 fade-in-section">
+    <div class="max-w-4xl mx-auto">
+        <div class="glass-card rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 border-l-4 border-electric-blue relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-electric-blue/5 rounded-full blur-3xl"></div>
+            <p class="text-xs uppercase tracking-wider text-electric-blue font-bold mb-3 sm:mb-4">Thought of the Week</p>
+            <p class="text-lg sm:text-xl lg:text-2xl leading-relaxed text-graphite-900 font-medium relative z-10">
+                Context isn't just data—it's the difference between an agent that responds and one that understands. 
+                The best AI sales tools won't replace reps; they'll make exceptional performance repeatable.
+            </p>
         </div>
     </div>
 </section>
 
-<!-- Featured Projects with fade-in -->
-<section class="max-w-6xl mx-auto px-8 py-16 border-t border-graphite-200 fade-in">
-    <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold text-graphite-900">Featured Projects</h2>
-        <a href="/projects" class="text-electric-blue hover:opacity-80 font-medium link-hover">View all →</a>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="border-2 border-graphite-200 rounded-xl p-8 bg-white card-hover">
-            <div class="flex items-start justify-between mb-4">
-                <h3 class="text-xl font-semibold text-graphite-900">Agent360</h3>
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Active</span>
-            </div>
-            <p class="text-graphite-600 leading-relaxed">
-                AI voice agents for Nordic sales teams. Context-aware, tool-equipped, and built for scale.
-            </p>
+<!-- Latest Blog Posts -->
+<section class="w-full mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 fade-in-section">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 gap-4">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-graphite-900">Latest Posts</h2>
+            <a href="/blog" class="inline-flex items-center gap-2 text-electric-blue hover:gap-3 font-semibold transition-all group text-sm sm:text-base">
+                <span>View all</span>
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
         </div>
         
-        <div class="border-2 border-graphite-200 rounded-xl p-8 bg-white card-hover">
-            <div class="flex items-start justify-between mb-4">
-                <h3 class="text-xl font-semibold text-graphite-900">EcommerceBot</h3>
-                <span class="px-3 py-1 bg-graphite-100 text-graphite-700 text-xs font-semibold rounded-full">Archived</span>
-            </div>
-            <p class="text-graphite-600 leading-relaxed">
-                The hostage saga, SF rebuild, and Shopify pivot. Lessons learned on the path to Agent360.
-            </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <!-- Blog post cards -->
+            <a href="/blog" class="premium-card glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-electric-blue/50 group block">
+                <div class="flex items-center gap-2 text-xs sm:text-sm text-electric-blue mb-3">
+                    <span class="w-2 h-2 bg-electric-blue rounded-full"></span>
+                    <span class="font-medium">Coming soon</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-graphite-900 group-hover:text-electric-blue transition-colors">Context as Key Differentiator</h3>
+                <p class="text-sm sm:text-base text-graphite-600 leading-relaxed">Why the best AI agents win on context, not just speed.</p>
+            </a>
+        
+            <a href="/blog" class="premium-card glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-electric-blue/50 group block">
+                <div class="flex items-center gap-2 text-xs sm:text-sm text-electric-blue mb-3">
+                    <span class="w-2 h-2 bg-electric-blue rounded-full"></span>
+                    <span class="font-medium">Coming soon</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-graphite-900 group-hover:text-electric-blue transition-colors">AI Agents with Tools</h3>
+                <p class="text-sm sm:text-base text-graphite-600 leading-relaxed">How tool-equipped agents transform sales workflows.</p>
+            </a>
+            
+            <a href="/blog" class="premium-card glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-electric-blue/50 group block">
+                <div class="flex items-center gap-2 text-xs sm:text-sm text-electric-blue mb-3">
+                    <span class="w-2 h-2 bg-electric-blue rounded-full"></span>
+                    <span class="font-medium">Coming soon</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-graphite-900 group-hover:text-electric-blue transition-colors">EU AI Act Perspective</h3>
+                <p class="text-sm sm:text-base text-graphite-600 leading-relaxed">Building compliant AI in the Nordic regulatory landscape.</p>
+            </a>
         </div>
     </div>
 </section>
-{% endblock %} 
+
+<!-- Featured Projects -->
+<section class="w-full mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 border-t border-graphite-200 fade-in-section">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 gap-4">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-graphite-900">Featured Projects</h2>
+            <a href="/projects" class="inline-flex items-center gap-2 text-electric-blue hover:gap-3 font-semibold transition-all text-sm sm:text-base">
+                <span>View all</span>
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            <div class="premium-card glass-card rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:border-electric-blue/50 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-electric-blue/5 rounded-full blur-3xl group-hover:bg-electric-blue/10 transition-colors"></div>
+                <div class="flex items-start justify-between mb-4 sm:mb-6 relative z-10 gap-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-graphite-900">Agent360</h3>
+                    <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-green-500/10 text-green-600 text-xs font-bold rounded-full border border-green-500/20 whitespace-nowrap">
+                        ACTIVE
+                    </span>
+                </div>
+                <p class="text-graphite-700 leading-relaxed text-base sm:text-lg relative z-10">
+                    AI voice agents for Nordic sales teams. Context-aware, tool-equipped, and built for scale.
+                </p>
+                <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-graphite-200 relative z-10">
+                    <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-graphite-500">
+                        <span class="flex items-center gap-1">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            AI Infrastructure
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            Nordic Focus
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-card glass-card rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:border-electric-blue/50 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-graphite-500/5 rounded-full blur-3xl"></div>
+                <div class="flex items-start justify-between mb-4 sm:mb-6 relative z-10 gap-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-graphite-900">EcommerceBot</h3>
+                    <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-graphite-100 text-graphite-600 text-xs font-bold rounded-full border border-graphite-200 whitespace-nowrap">
+                        ARCHIVED
+                    </span>
+                </div>
+                <p class="text-graphite-700 leading-relaxed text-base sm:text-lg relative z-10">
+                    The hostage saga, SF rebuild, and Shopify pivot. Lessons learned on the path to Agent360.
+                </p>
+                <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-graphite-200 relative z-10">
+                    <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-graphite-500">
+                        <span class="flex items-center gap-1">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                            Pivot Story
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            Lessons Learned
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,39 +1,83 @@
-<header class="border-b border-graphite-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto px-8 py-6" role="navigation" aria-label="Main navigation">
+<header class="w-full border-b border-graphite-200 bg-white">
+    <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 sm:py-6" role="navigation" aria-label="Main navigation">
         <div class="flex items-center justify-between">
             <!-- Logo/Wordmark -->
-            <a href="/" class="text-2xl font-bold text-graphite-900 hover:text-electric-blue link-hover">
+            <a href="/" class="text-xl sm:text-2xl font-semibold text-graphite-900 hover:text-electric-blue z-20">
                 Gustav Louv
             </a>
             
-            <!-- Navigation Links -->
-            <ul class="flex items-center space-x-8 text-base">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden z-20 p-2 text-graphite-700 hover:text-electric-blue" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden lg:flex items-center space-x-8 text-base">
                 <li>
-                    <a href="/" class="text-graphite-700 hover:text-electric-blue link-hover {% if request.url.path == '/' %}font-semibold text-graphite-900{% endif %}">
+                    <a href="/" class="text-graphite-700 hover:text-electric-blue {% if request.url.path == '/' %}font-medium text-graphite-900{% endif %}">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/about" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/about' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                    <a href="/about" class="text-graphite-700 hover:text-electric-blue {% if '/about' in request.url.path %}font-medium text-graphite-900{% endif %}">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="/blog" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/blog' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                    <a href="/blog" class="text-graphite-700 hover:text-electric-blue {% if '/blog' in request.url.path %}font-medium text-graphite-900{% endif %}">
                         Blog
                     </a>
                 </li>
                 <li>
-                    <a href="/projects" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/projects' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                    <a href="/projects" class="text-graphite-700 hover:text-electric-blue {% if '/projects' in request.url.path %}font-medium text-graphite-900{% endif %}">
                         Projects
                     </a>
                 </li>
                 <li>
-                    <a href="/contact" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/contact' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                    <a href="/contact" class="text-graphite-700 hover:text-electric-blue {% if '/contact' in request.url.path %}font-medium text-graphite-900{% endif %}">
                         Contact
                     </a>
                 </li>
             </ul>
         </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-10 bg-white">
+            <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+                <a href="/" class="text-graphite-700 hover:text-electric-blue {% if request.url.path == '/' %}font-medium text-graphite-900{% endif %}">
+                    Home
+                </a>
+                <a href="/about" class="text-graphite-700 hover:text-electric-blue {% if '/about' in request.url.path %}font-medium text-graphite-900{% endif %}">
+                    About
+                </a>
+                <a href="/blog" class="text-graphite-700 hover:text-electric-blue {% if '/blog' in request.url.path %}font-medium text-graphite-900{% endif %}">
+                    Blog
+                </a>
+                <a href="/projects" class="text-graphite-700 hover:text-electric-blue {% if '/projects' in request.url.path %}font-medium text-graphite-900{% endif %}">
+                    Projects
+                </a>
+                <a href="/contact" class="text-graphite-700 hover:text-electric-blue {% if '/contact' in request.url.path %}font-medium text-graphite-900{% endif %}">
+                    Contact
+                </a>
+            </div>
+        </div>
     </nav>
-</header> 
+</header>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        menu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+    });
+</script>
+
