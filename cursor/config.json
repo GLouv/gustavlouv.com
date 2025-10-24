@@ -1,0 +1,7 @@
+{
+  "defaultPrompt": "cursor/main_prompt.md",
+  "enforceContext": true,
+  "autoLoadSubPrompts": true,
+  "logLevel": "info"
+}
+

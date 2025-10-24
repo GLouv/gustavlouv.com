@@ -1,0 +1,39 @@
+<header class="border-b border-graphite-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-8 py-6" role="navigation" aria-label="Main navigation">
+        <div class="flex items-center justify-between">
+            <!-- Logo/Wordmark -->
+            <a href="/" class="text-2xl font-bold text-graphite-900 hover:text-electric-blue link-hover">
+                Gustav Louv
+            </a>
+            
+            <!-- Navigation Links -->
+            <ul class="flex items-center space-x-8 text-base">
+                <li>
+                    <a href="/" class="text-graphite-700 hover:text-electric-blue link-hover {% if request.url.path == '/' %}font-semibold text-graphite-900{% endif %}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/about" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/about' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/blog' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/projects' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact" class="text-graphite-700 hover:text-electric-blue link-hover {% if '/contact' in request.url.path %}font-semibold text-graphite-900{% endif %}">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header> 

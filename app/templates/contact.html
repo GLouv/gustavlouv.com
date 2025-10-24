@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="max-w-[70ch] mx-auto px-8 py-24">
+    <h1 class="text-4xl font-medium mb-8 text-graphite-900">Contact</h1>
+    
+    <div class="prose prose-lg text-graphite-700 leading-relaxed space-y-8">
+        <p class="text-xl">
+            The best way to reach me is direct. No forms. No gatekeepers.
+        </p>
+        
+        <!-- Email -->
+        <div class="border-l-4 border-electric-blue pl-6 py-4 bg-graphite-50 rounded-r-lg">
+            <p class="text-sm text-graphite-500 mb-1">Email</p>
+            <a href="mailto:gustav@gustavlouv.com" class="text-xl font-medium text-electric-blue hover:opacity-80">
+                gustav@gustavlouv.com
+            </a>
+        </div>
+        
+        <!-- Social -->
+        <div>
+            <h2 class="text-2xl font-medium mb-4 text-graphite-900">Social</h2>
+            <ul class="space-y-3">
+                <li>
+                    <a href="https://x.com/gustavlouv" target="_blank" rel="noopener" 
+                       class="text-electric-blue hover:opacity-80 text-lg">
+                        X (Twitter) →
+                    </a>
+                    <span class="text-graphite-500 text-sm ml-2">Daily updates on building Agent360</span>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/gustavlouv" target="_blank" rel="noopener" 
+                       class="text-electric-blue hover:opacity-80 text-lg">
+                        LinkedIn →
+                    </a>
+                    <span class="text-graphite-500 text-sm ml-2">Professional network</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Context -->
+        <div class="mt-12 pt-8 border-t border-graphite-200">
+            <h2 class="text-2xl font-medium mb-4 text-graphite-900">What I'm interested in</h2>
+            <ul class="space-y-2 text-graphite-700">
+                <li>• AI sales infrastructure and voice agents</li>
+                <li>• Nordic market expansion and regulatory compliance</li>
+                <li>• Partnerships with sales teams and SaaS companies</li>
+                <li>• Investor conversations (early-stage, operator-focused)</li>
+                <li>• Technical discussions on context-aware AI systems</li>
+            </ul>
+        </div>
+        
+        <div class="mt-8 p-6 bg-graphite-50 rounded-lg">
+            <p class="text-graphite-600 text-sm">
+                <strong>Note:</strong> I respond to thoughtful emails. If you're reaching out about partnerships, 
+                investment, or collaboration, include context about why you think there's a fit. 
+                Generic pitches get archived.
+            </p>
+        </div>
+    </div>
+</article>
+{% endblock %}
+

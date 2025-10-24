@@ -1,0 +1,20 @@
+{
+  "prompts": {
+    "default": "cursor/main_prompt.md",
+    "sub": {
+      "style": "cursor/sub_prompts/site_style_guide.md",
+      "accessibility": "cursor/sub_prompts/accessibility_platforms.md",
+      "provenance": "cursor/sub_prompts/provenance_plan.md"
+    }
+  },
+  "rules": {
+    "inherit_sub_prompts": true,
+    "sub_prompts_priority": ["style", "accessibility", "provenance"]
+  },
+  "metadata": {
+    "project": "gustavlouv.com",
+    "owner": "Gustav Louv",
+    "purpose": "Personal site — authentic Nordic AI operator aesthetic"
+  }
+}
+

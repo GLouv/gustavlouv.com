@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="max-w-[70ch] mx-auto px-8 py-24">
+    <!-- Post Header -->
+    <header class="mb-12">
+        <div class="flex items-center gap-4 text-sm text-graphite-500 mb-4">
+            <time datetime="{{ post.published_at.isoformat() }}">
+                {{ post.published_at.strftime('%B %d, %Y') }}
+            </time>
+            {% if post.reading_time %}
+            <span>•</span>
+            <span>{{ post.reading_time }} min read</span>
+            {% endif %}
+            <span>•</span>
+            <span>{{ post.author }}</span>
+        </div>
+        
+        <h1 class="text-4xl font-medium mb-4 text-graphite-900 leading-tight">
+            {{ post.title }}
+        </h1>
+        
+        {% if post.excerpt %}
+        <p class="text-xl text-graphite-600 leading-relaxed">
+            {{ post.excerpt }}
+        </p>
+        {% endif %}
+    </header>
+    
+    <!-- Post Content -->
+    <div class="prose prose-lg max-w-none text-graphite-700 leading-relaxed">
+        {{ post.content | safe }}
+    </div>
+    
+    <!-- Audio Player (if available) -->
+    {% if post.audio_url %}
+    <div class="mt-12 p-6 border border-graphite-200 rounded-xl bg-graphite-50">
+        <h3 class="text-lg font-medium mb-3 text-graphite-900">Listen to this post</h3>
+        <audio controls class="w-full">
+            <source src="{{ post.audio_url }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        {% if post.transcript_url %}
+        <p class="mt-2 text-sm text-graphite-600">
+            <a href="{{ post.transcript_url }}" class="text-electric-blue hover:opacity-80">View transcript</a>
+        </p>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    <!-- ProofPanel -->
+    {% if edition %}
+    {% include 'partials/_proof_panel.html' %}
+    {% endif %}
+    
+    <!-- Share -->
+    <div class="mt-16 pt-8 border-t border-graphite-200">
+        <p class="text-sm text-graphite-600 mb-3">Share this post</p>
+        <div class="flex gap-3">
+            <a href="https://twitter.com/intent/tweet?text={{ post.title | urlencode }}&url={{ request.url | urlencode }}" 
+               target="_blank" 
+               rel="noopener"
+               class="px-4 py-2 border border-graphite-300 rounded-lg text-graphite-700 hover:border-electric-blue hover:text-electric-blue text-sm">
+                Share on X
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.url | urlencode }}&title={{ post.title | urlencode }}" 
+               target="_blank" 
+               rel="noopener"
+               class="px-4 py-2 border border-graphite-300 rounded-lg text-graphite-700 hover:border-electric-blue hover:text-electric-blue text-sm">
+                Share on LinkedIn
+            </a>
+        </div>
+    </div>
+    
+    <!-- Back to Blog -->
+    <div class="mt-8">
+        <a href="/blog" class="text-electric-blue hover:opacity-80 inline-flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to all posts
+        </a>
+    </div>
+</article>
+{% endblock %}
+

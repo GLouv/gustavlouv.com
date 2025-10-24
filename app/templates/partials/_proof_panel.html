@@ -1,0 +1,119 @@
+<!-- Provenance Proof Panel -->
+<aside class="mt-16 p-8 border-2 border-graphite-200 rounded-xl bg-graphite-50">
+    <h3 class="text-lg font-medium mb-4 text-graphite-900 flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        Cryptographic Proof
+    </h3>
+    
+    <p class="text-sm text-graphite-600 mb-6">
+        This post edition is cryptographically sealed. All proof artifacts are available for independent verification.
+    </p>
+    
+    <dl class="space-y-4 text-sm">
+        <!-- Published Time -->
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">Published (UTC)</dt>
+            <dd class="text-graphite-900 font-mono">{{ edition.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</dd>
+        </div>
+        
+        <!-- Edition Number -->
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">Edition Number</dt>
+            <dd class="text-graphite-900">{{ edition.edition_number }}</dd>
+        </div>
+        
+        <!-- Content Hash -->
+        <div class="pt-4 border-t border-graphite-300">
+            <dt class="text-graphite-600 font-medium mb-2">Content Hash (SHA-256)</dt>
+            <dd class="text-graphite-900 font-mono text-xs break-all bg-white p-3 rounded border border-graphite-200">
+                {{ edition.content_hash }}
+            </dd>
+        </div>
+        
+        <!-- Signature -->
+        {% if edition.signature_fingerprint %}
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">GPG Signature</dt>
+            <dd class="text-graphite-900 font-mono text-xs">
+                {{ edition.signature_fingerprint[:16] }}...
+            </dd>
+        </div>
+        {% endif %}
+        
+        <!-- QTSP Timestamp -->
+        {% if edition.qtsp_token_url %}
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">Danish QTSP Token</dt>
+            <dd>
+                <a href="{{ edition.qtsp_token_url }}" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="text-electric-blue hover:opacity-80 text-xs">
+                    Download .tsr →
+                </a>
+            </dd>
+        </div>
+        {% endif %}
+        
+        <!-- OpenTimestamps -->
+        {% if edition.ots_proof_url %}
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">OpenTimestamps Proof</dt>
+            <dd>
+                <a href="{{ edition.ots_proof_url }}" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="text-electric-blue hover:opacity-80 text-xs">
+                    Download .ots →
+                </a>
+            </dd>
+        </div>
+        {% endif %}
+        
+        <!-- IPFS -->
+        {% if edition.ipfs_cid %}
+        <div class="pt-4 border-t border-graphite-300">
+            <dt class="text-graphite-600 font-medium mb-2">IPFS CID</dt>
+            <dd class="text-graphite-900 font-mono text-xs break-all">
+                {{ edition.ipfs_cid }}
+            </dd>
+            <dd class="mt-2">
+                <a href="https://ipfs.io/ipfs/{{ edition.ipfs_cid }}" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="text-electric-blue hover:opacity-80 text-xs">
+                    View on IPFS →
+                </a>
+            </dd>
+        </div>
+        {% endif %}
+        
+        <!-- Edition Bundle -->
+        {% if edition.bundle_url %}
+        <div class="flex justify-between items-start">
+            <dt class="text-graphite-600 font-medium">Edition Bundle</dt>
+            <dd>
+                <a href="{{ edition.bundle_url }}" 
+                   download
+                   class="text-electric-blue hover:opacity-80 text-xs">
+                    Download archive →
+                </a>
+            </dd>
+        </div>
+        {% endif %}
+    </dl>
+    
+    <!-- Verify CTA -->
+    <div class="mt-6 pt-6 border-t border-graphite-300">
+        <a href="/verify/{{ post.slug }}/{{ edition.edition_number }}" 
+           class="inline-flex items-center px-4 py-2 bg-electric-blue text-white rounded-lg text-sm font-medium hover:opacity-90">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Verify this edition
+        </a>
+    </div>
+</aside>
+

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section with subtle gradient + mesh -->
+<section class="hero-gradient mesh-pattern relative overflow-hidden">
+    <div class="max-w-[70ch] mx-auto px-8 pt-32 pb-16">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 heading-gradient">
+            From sales floors to AI agents.<br>
+            Automating how the Nordics sell.
+        </h1>
+    
+        <p class="text-lg leading-relaxed text-graphite-700 mb-4">
+            I built Agent360 to create the Nordic AI sales infrastructure—voice agents that understand context, 
+            navigate complexity, and close deals. Six months in, we're turning sales conversations into scalable systems.
+        </p>
+        
+        <p class="text-lg leading-relaxed text-graphite-700 mb-8">
+            Before this, I closed 8,000+ contracts before turning 25, survived an EcommerceBot hostage incident in SF, 
+            and pivoted toward the AI future. This is where that journey leads.
+        </p>
+        
+        <!-- CTAs -->
+        <div class="flex gap-4 items-center flex-wrap">
+            <a href="/blog" 
+               class="inline-flex items-center justify-center px-6 py-3 bg-electric-blue text-white rounded-xl font-medium shadow-sm hover:shadow-md min-w-[44px] min-h-[44px]">
+                Read the Blog
+            </a>
+            <a href="https://x.com/gustavlouv" 
+               target="_blank" 
+               rel="noopener"
+               class="inline-flex items-center justify-center px-6 py-3 border-2 border-graphite-200 text-graphite-900 rounded-xl font-medium hover:border-electric-blue hover:text-electric-blue min-w-[44px] min-h-[44px]">
+                Follow on X
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Agent360 Snapshot with fade-in -->
+<section class="max-w-[70ch] mx-auto px-8 py-16 border-t border-graphite-200 fade-in">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-graphite-900">Agent360 Now</h2>
+    <p class="text-base md:text-lg leading-relaxed text-graphite-700">
+        Building AI voice agents that sell with context. We're focused on the Nordic market first—training models 
+        that understand local nuance, regulatory requirements, and buyer behavior. The infrastructure layer for 
+        the next decade of sales.
+    </p>
+</section>
+
+<!-- Thought of the Week with fade-in -->
+<section class="max-w-[70ch] mx-auto px-8 py-16 fade-in">
+    <div class="bg-graphite-50 border border-graphite-100 rounded-xl p-8 card-hover">
+        <p class="text-sm uppercase tracking-wide text-graphite-500 mb-3 font-medium">Thought of the Week</p>
+        <p class="text-lg leading-relaxed text-graphite-900 italic">
+            Context isn't just data—it's the difference between an agent that responds and one that understands. 
+            The best AI sales tools won't replace reps; they'll make exceptional performance repeatable.
+        </p>
+    </div>
+</section>
+
+<!-- Latest Blog Posts with fade-in -->
+<section class="max-w-6xl mx-auto px-8 py-16 fade-in">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-semibold text-graphite-900">Latest Posts</h2>
+        <a href="/blog" class="text-electric-blue hover:opacity-80 font-medium link-hover">View all →</a>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Blog post cards -->
+        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
+            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
+            <h3 class="text-xl font-semibold mb-2 text-graphite-900">Context as Key Differentiator</h3>
+            <p class="text-graphite-600 text-sm leading-relaxed">Why the best AI agents win on context, not just speed.</p>
+        </div>
+        
+        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
+            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
+            <h3 class="text-xl font-semibold mb-2 text-graphite-900">AI Agents with Tools</h3>
+            <p class="text-graphite-600 text-sm leading-relaxed">How tool-equipped agents transform sales workflows.</p>
+        </div>
+        
+        <div class="border border-graphite-200 rounded-xl p-6 bg-white card-hover">
+            <p class="text-sm text-graphite-500 mb-2 font-medium">Coming soon</p>
+            <h3 class="text-xl font-semibold mb-2 text-graphite-900">EU AI Act Perspective</h3>
+            <p class="text-graphite-600 text-sm leading-relaxed">Building compliant AI in the Nordic regulatory landscape.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects with fade-in -->
+<section class="max-w-6xl mx-auto px-8 py-16 border-t border-graphite-200 fade-in">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-semibold text-graphite-900">Featured Projects</h2>
+        <a href="/projects" class="text-electric-blue hover:opacity-80 font-medium link-hover">View all →</a>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-2 border-graphite-200 rounded-xl p-8 bg-white card-hover">
+            <div class="flex items-start justify-between mb-4">
+                <h3 class="text-xl font-semibold text-graphite-900">Agent360</h3>
+                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Active</span>
+            </div>
+            <p class="text-graphite-600 leading-relaxed">
+                AI voice agents for Nordic sales teams. Context-aware, tool-equipped, and built for scale.
+            </p>
+        </div>
+        
+        <div class="border-2 border-graphite-200 rounded-xl p-8 bg-white card-hover">
+            <div class="flex items-start justify-between mb-4">
+                <h3 class="text-xl font-semibold text-graphite-900">EcommerceBot</h3>
+                <span class="px-3 py-1 bg-graphite-100 text-graphite-700 text-xs font-semibold rounded-full">Archived</span>
+            </div>
+            <p class="text-graphite-600 leading-relaxed">
+                The hostage saga, SF rebuild, and Shopify pivot. Lessons learned on the path to Agent360.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %} 

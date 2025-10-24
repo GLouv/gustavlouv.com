@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-8 py-24">
+    <header class="mb-16">
+        <h1 class="text-4xl font-medium mb-4 text-graphite-900">Blog</h1>
+        <p class="text-xl text-graphite-600">
+            Thoughts on AI, sales automation, and building the Nordic AI infrastructure.
+        </p>
+    </header>
+    
+    {% if posts %}
+    <div class="space-y-12">
+        {% for post in posts %}
+        <article class="border-b border-graphite-200 pb-12 last:border-0">
+            <div class="flex items-center gap-4 text-sm text-graphite-500 mb-3">
+                <time datetime="{{ post.published_at.isoformat() }}">
+                    {{ post.published_at.strftime('%B %d, %Y') }}
+                </time>
+                {% if post.reading_time %}
+                <span>•</span>
+                <span>{{ post.reading_time }} min read</span>
+                {% endif %}
+            </div>
+            
+            <h2 class="text-2xl font-medium mb-3 text-graphite-900">
+                <a href="/blog/{{ post.slug }}" class="hover:text-electric-blue">
+                    {{ post.title }}
+                </a>
+            </h2>
+            
+            {% if post.excerpt %}
+            <p class="text-graphite-700 leading-relaxed mb-4">
+                {{ post.excerpt }}
+            </p>
+            {% endif %}
+            
+            <a href="/blog/{{ post.slug }}" 
+               class="text-electric-blue hover:opacity-80 font-medium inline-flex items-center">
+                Read post
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if total_pages > 1 %}
+    <nav class="mt-16 flex items-center justify-center gap-2" aria-label="Pagination">
+        {% if page > 1 %}
+        <a href="/blog?page={{ page - 1 }}" 
+           class="px-4 py-2 border border-graphite-300 rounded-lg text-graphite-700 hover:border-electric-blue hover:text-electric-blue">
+            ← Previous
+        </a>
+        {% endif %}
+        
+        <span class="px-4 py-2 text-graphite-600">
+            Page {{ page }} of {{ total_pages }}
+        </span>
+        
+        {% if page < total_pages %}
+        <a href="/blog?page={{ page + 1 }}" 
+           class="px-4 py-2 border border-graphite-300 rounded-lg text-graphite-700 hover:border-electric-blue hover:text-electric-blue">
+            Next →
+        </a>
+        {% endif %}
+    </nav>
+    {% endif %}
+    
+    {% else %}
+    <!-- Empty State -->
+    <div class="text-center py-16">
+        <p class="text-xl text-graphite-600 mb-4">No posts yet.</p>
+        <p class="text-graphite-500">Check back soon for thoughts on AI, sales, and building in the Nordics.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
